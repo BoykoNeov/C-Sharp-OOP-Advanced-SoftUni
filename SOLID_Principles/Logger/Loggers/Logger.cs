@@ -2,22 +2,24 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Text;
 
     public class Logger : ILogger
     {
         private List<Appender> appenders;
 
-        public Logger(params Appender[] appenders)
+        public Logger(params Appender[] appenders) : this()
         {
-            this.Appenders = new List<Appender>();
-
             foreach (Appender appender in appenders)
             {
                 this.appenders.Add(appender);
             }
         }
 
-        public Logger() { }
+        public Logger()
+        {
+            this.Appenders = new List<Appender>();
+        }
 
         public List<Appender> Appenders { get => appenders; private set => appenders = value; }
 
@@ -37,6 +39,19 @@
         public void Critical(string dateTime, string message)
         {
             CallAppendersWithMessage(dateTime, ReportLevel.CRITICAL, message);
+        }
+
+        public string GetInfo()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("Logger info"); ;
+            foreach (Appender appender in this.appenders)
+            {
+                sb.AppendLine(appender.ToString());
+            }
+
+            return sb.ToString();
         }
 
         public void Error(string dateTime, string message)
