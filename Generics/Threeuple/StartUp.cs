@@ -10,11 +10,11 @@ public class StartUp
         Console.WriteLine(firstTuple.ToString());
 
         string[] secondInput = Console.ReadLine().Split();
-        Threeuple<string, int, string> secondTuple = new Threeuple<string, int, string>(secondInput[0], int.Parse(secondInput[1]), secondInput[2]);
+        Threeuple<string, int, bool> secondTuple = new Threeuple<string, int, bool>(secondInput[0], int.Parse(secondInput[1]), ((secondInput[2] == "drunk") ? true : false));
         Console.WriteLine(secondTuple.ToString());
 
         string[] thirdInput = Console.ReadLine().Split();
-        Threeuple<int, double, string> thirdTuple = new Threeuple<int, double, string>(int.Parse(thirdInput[0]), double.Parse(thirdInput[1]), thirdInput[2]);
+        Threeuple<string, double, string> thirdTuple = new Threeuple<string, double, string>(thirdInput[0], double.Parse(thirdInput[1]), thirdInput[2]);
         Console.WriteLine(thirdTuple.ToString());
     }
 }
