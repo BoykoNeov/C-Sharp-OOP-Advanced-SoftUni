@@ -5,17 +5,21 @@ VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stealer", "Stealer\Stealer.csproj", "{7589A555-1189-41AB-97B6-8CCF762A695E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HighQualityMistakes", "HighQualityMistakes\HighQualityMistakes.csproj", "{A471733D-EF86-4254-A0F8-6325A21C9E12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HighQualityMistakes", "HighQualityMistakes\HighQualityMistakes.csproj", "{A471733D-EF86-4254-A0F8-6325A21C9E12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MissionPrivateImpossible", "MissionPrivateImpossible\MissionPrivateImpossible.csproj", "{AB09E35C-A285-4AF3-9025-C842F4B75042}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MissionPrivateImpossible", "MissionPrivateImpossible\MissionPrivateImpossible.csproj", "{AB09E35C-A285-4AF3-9025-C842F4B75042}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collector", "Collector\Collector.csproj", "{E99E179C-8016-448A-B145-FC4970B62521}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Collector", "Collector\Collector.csproj", "{E99E179C-8016-448A-B145-FC4970B62521}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateAttribute", "CreateAttribute\CreateAttribute.csproj", "{116FE301-3642-4E57-B8C4-F388463C4D5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreateAttribute", "CreateAttribute\CreateAttribute.csproj", "{116FE301-3642-4E57-B8C4-F388463C4D5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingTracker", "CodeTracker\CodingTracker.csproj", "{7CEE1993-FBD9-4F74-B4F4-86A842EB21FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingTracker", "CodeTracker\CodingTracker.csproj", "{7CEE1993-FBD9-4F74-B4F4-86A842EB21FE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01_HarvestingFields", "P01_HarvestingFields\P01_HarvestingFields.csproj", "{DBA8DE04-73AA-40C9-839D-9FEAE82ECB08}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P02_BlackBoxInteger", "P02_BlackBoxInteger\P02_BlackBoxInteger.csproj", "{AEC40C8F-95F2-4A0D-92DD-A0F85CB3E1F8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P03_BarraksWars", "P03_BarraksWars\P03_BarraksWars.csproj", "{36A1EDA1-A859-41B2-999E-640835AF24BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{DBA8DE04-73AA-40C9-839D-9FEAE82ECB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBA8DE04-73AA-40C9-839D-9FEAE82ECB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBA8DE04-73AA-40C9-839D-9FEAE82ECB08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEC40C8F-95F2-4A0D-92DD-A0F85CB3E1F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEC40C8F-95F2-4A0D-92DD-A0F85CB3E1F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEC40C8F-95F2-4A0D-92DD-A0F85CB3E1F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEC40C8F-95F2-4A0D-92DD-A0F85CB3E1F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36A1EDA1-A859-41B2-999E-640835AF24BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36A1EDA1-A859-41B2-999E-640835AF24BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36A1EDA1-A859-41B2-999E-640835AF24BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36A1EDA1-A859-41B2-999E-640835AF24BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
