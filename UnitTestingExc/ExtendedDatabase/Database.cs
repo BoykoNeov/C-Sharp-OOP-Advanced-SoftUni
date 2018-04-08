@@ -16,6 +16,26 @@ namespace ExtendedDatabase
             private set { elements = value; }
         }
 
+        public T FindByUsername(string username)
+        {
+            if (string.IsNullOrWhiteSpace(username))
+            {
+                throw new ArgumentNullException("Argument cannot be null or whitespace!");
+            }
+            else
+            {
+                T elementToFind = this.Elements.SingleOrDefault(x => x.Username == username);
+                if (elementToFind == null)
+                {
+                    throw new InvalidOperationException("No Db element with such username exists!");
+                }
+                else
+                {
+                    return elementToFind;
+                }
+            }
+        }
+
 
         public Database()
         {
@@ -42,11 +62,11 @@ namespace ExtendedDatabase
             {
                 throw new InvalidOperationException("Database is full!");
             }
-            else if (this.Elements.Any(x => x.Id == element.Id))
+            else if (this.Elements.Any(x => x != null && x.Id.Equals(element.Id)))
             {
                 throw new InvalidOperationException("Database already contains an element with such Id!");
             }
-            else if (this.Elements.Any(x => x.Username == element.Username))
+            else if (this.Elements.Any(x => x != null && x.Username.Equals(element.Username)))
             {
                 throw new InvalidOperationException("Database already contains an element with such Name");
             }

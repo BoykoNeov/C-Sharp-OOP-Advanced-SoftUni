@@ -146,5 +146,75 @@ namespace ExtendedDatabaseTests
             Exception ex = Assert.Throws<InvalidOperationException>(() => db.Add(new Person(1, "A3")));
             Assert.That(ex.Message == "Database already contains an element with such Id!");
         }
+
+        [Test]
+        public void AddingANonUniqueByUsernameElementShouldThrowException()
+        {
+            Database<Person> db = new Database<Person>();
+            db.Add(new Person(1, "A1"));
+            db.Add(new Person(2, "A2"));
+            Exception ex = Assert.Throws<InvalidOperationException>(() => db.Add(new Person(3, "A1")));
+            Assert.That(ex.Message == "Database already contains an element with such Name");
+        }
+
+        [Test]
+        public void FindElementByUsernameShouldReturnCorrectElement()
+        {
+            Database<Person> db = new Database<Person>();
+            for (int i = 0; i < 16; i++)
+            {
+                db.Add(new Person(i, "a" + i));
+            }
+
+            Person personToFind = db.FindByUsername("a10");
+            Assert.That(personToFind.Equals(new Person(10, "a10")));
+        }
+
+        [Test]
+        public void PassingNullOrWhiteSpaceStringToFindByUsernameShouldThrowException()
+        {
+            Database<Person> db = new Database<Person>();
+            db.Add(new Person(1, "A1"));
+            db.Add(new Person(2, "A2"));
+            bool exceptionIsThrown = false;
+
+            try
+            {
+               var a = db.FindByUsername(" ");
+            }
+            catch(ArgumentException ex)
+            {
+               exceptionIsThrown = true;
+               Assert.That(ex.ParamName == "Argument cannot be null or whitespace!");
+            }
+
+            Assert.That(exceptionIsThrown);
+            exceptionIsThrown = false;
+
+            try
+            {
+                db.FindByUsername(string.Empty);
+            }
+            catch (ArgumentException ex2)
+            {
+                exceptionIsThrown = true;
+                Assert.That(ex2.ParamName == "Argument cannot be null or whitespace!");
+            }
+
+            Assert.That(exceptionIsThrown);
+            exceptionIsThrown = false;
+
+            try
+            {
+                db.FindByUsername(null);
+            }
+            catch (ArgumentException ex3)
+            {
+                exceptionIsThrown = true;
+                Assert.That(ex3.ParamName == "Argument cannot be null or whitespace!");
+            }
+
+            Assert.That(exceptionIsThrown);
+        }
     }
 }
