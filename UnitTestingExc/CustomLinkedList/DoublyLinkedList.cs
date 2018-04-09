@@ -81,7 +81,7 @@ public class DoublyLinkedList<T> : IEnumerable<T>
     {
         if (this.Count == 0)
         {
-            throw new InvalidOperationException("List empty");
+            throw new InvalidOperationException("List is empty!");
         }
 
         T firstElement = this.head.Value;
