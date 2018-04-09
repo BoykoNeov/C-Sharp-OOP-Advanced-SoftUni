@@ -11,15 +11,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtendedDatabase", "Extende
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtendedDatabaseTests", "ExtendedDatabaseTests\ExtendedDatabaseTests.csproj", "{BEA1ED74-C692-48BF-9565-562F8C9D2A30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iterator", "Iterator\Iterator.csproj", "{ADF2CC96-913D-4BBF-A2CC-9952655AEC37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iterator", "Iterator\Iterator.csproj", "{ADF2CC96-913D-4BBF-A2CC-9952655AEC37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IteratorTest", "IteratorTest\IteratorTest.csproj", "{4E426D89-074B-4250-BD67-ABDF6FFF15BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IteratorTest", "IteratorTest\IteratorTest.csproj", "{4E426D89-074B-4250-BD67-ABDF6FFF15BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter", "Twitter\Twitter.csproj", "{B89D2FFE-469F-42F2-9BB4-1C111A93585C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter", "Twitter\Twitter.csproj", "{B89D2FFE-469F-42F2-9BB4-1C111A93585C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterTest", "TwitterTest\TwitterTest.csproj", "{40A90A68-712B-4EEE-8EAF-8D4401BB5610}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwitterTest", "TwitterTest\TwitterTest.csproj", "{40A90A68-712B-4EEE-8EAF-8D4401BB5610}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hack", "Hack\Hack.csproj", "{F0FC45EF-819B-4972-A870-BC004EA6328E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hack", "Hack\Hack.csproj", "{F0FC45EF-819B-4972-A870-BC004EA6328E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomLinkedList", "CustomLinkedList\CustomLinkedList.csproj", "{C4B8839A-F1D3-41A0-98AA-6672DAFB63E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomLinkedListTest", "CustomLinkedListTest\CustomLinkedListTest.csproj", "{2CA70E45-38F7-4937-AEE6-0BBF2FCF7055}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +67,14 @@ Global
 		{F0FC45EF-819B-4972-A870-BC004EA6328E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0FC45EF-819B-4972-A870-BC004EA6328E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0FC45EF-819B-4972-A870-BC004EA6328E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4B8839A-F1D3-41A0-98AA-6672DAFB63E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4B8839A-F1D3-41A0-98AA-6672DAFB63E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4B8839A-F1D3-41A0-98AA-6672DAFB63E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4B8839A-F1D3-41A0-98AA-6672DAFB63E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CA70E45-38F7-4937-AEE6-0BBF2FCF7055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CA70E45-38F7-4937-AEE6-0BBF2FCF7055}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CA70E45-38F7-4937-AEE6-0BBF2FCF7055}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CA70E45-38F7-4937-AEE6-0BBF2FCF7055}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
