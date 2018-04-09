@@ -16,7 +16,7 @@ namespace ExtendedDatabase
             private set { elements = value; }
         }
 
-        public T FindByUsername(string username)
+        public T FindByElementByName(string username)
         {
             if (string.IsNullOrWhiteSpace(username))
             {
@@ -28,6 +28,26 @@ namespace ExtendedDatabase
                 if (elementToFind == null)
                 {
                     throw new InvalidOperationException("No Db element with such username exists!");
+                }
+                else
+                {
+                    return elementToFind;
+                }
+            }
+        }
+
+        public T FindElementById(int id)
+        {
+            if (id < 0)
+            {
+                throw new ArgumentOutOfRangeException("Id cannot be negative!");
+            }
+            else
+            {
+                T elementToFind = this.Elements.SingleOrDefault(x => x.Id == id);
+                if (elementToFind == null)
+                {
+                    throw new InvalidOperationException("No Db element with such id exists!");
                 }
                 else
                 {

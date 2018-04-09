@@ -1,11 +1,21 @@
-﻿using System;
+﻿using ExtendedDatabase;
 using NUnit.Framework;
-using ExtendedDatabase;
+using System;
+using System.Linq;
+using System.Reflection;
 
 namespace ExtendedDatabaseTests
 {
     public class ExtendedDatabaseTests
     {
+        private static Random random = new Random();
+        public static string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
         [Test]
         public void CreatingADatabaseWith16SizeArrayShouldHaveA16SizeArray()
         {
@@ -166,7 +176,7 @@ namespace ExtendedDatabaseTests
                 db.Add(new Person(i, "a" + i));
             }
 
-            Person personToFind = db.FindByUsername("a10");
+            Person personToFind = db.FindByElementByName("a10");
             Assert.That(personToFind.Equals(new Person(10, "a10")));
         }
 
@@ -180,7 +190,8 @@ namespace ExtendedDatabaseTests
 
             try
             {
-               var a = db.FindByUsername(" ");
+               var a = db.FindByElementByName(" ");
+                // it can be done easier by adding Assert.Fail in the try block, instead of a separate bool variable
             }
             catch(ArgumentException ex)
             {
@@ -193,7 +204,7 @@ namespace ExtendedDatabaseTests
 
             try
             {
-                db.FindByUsername(string.Empty);
+                db.FindByElementByName(string.Empty);
             }
             catch (ArgumentException ex2)
             {
@@ -206,7 +217,7 @@ namespace ExtendedDatabaseTests
 
             try
             {
-                db.FindByUsername(null);
+                db.FindByElementByName(null);
             }
             catch (ArgumentException ex3)
             {
@@ -215,6 +226,45 @@ namespace ExtendedDatabaseTests
             }
 
             Assert.That(exceptionIsThrown);
+        }
+
+        [Test]
+        public void FindElementByIdShouldReturnCorrectElement()
+        {
+            Database<Person> db = new Database<Person>();
+            for (int i = 0; i < 16; i++)
+            {
+                db.Add(new Person(i, "a" + i));
+            }
+
+            Person personToFind = db.FindElementById(10);
+            Assert.That(personToFind.Equals(new Person(10, "a10")));
+        }
+
+        [Test]
+        public void PassingNegativeValueToFindByIdShouldThrowException()
+        {
+            Database<Person> db = new Database<Person>();
+            db.Add(new Person(1, RandomString(10)));
+            db.Add(new Person(2, RandomString(10) + "a")); // what if miniscule probability that the strings turn out equal happens to be true? Randoms are powerful, but should be used with great caution in unit testing
+
+            Exception ex = Assert.Throws<ArgumentOutOfRangeException>(() => db.FindElementById(-1));
+            PropertyInfo exceptionParameterMessage = ex.GetType().GetRuntimeProperty("ParamName");
+            string exceptionMessageResult = (string)exceptionParameterMessage.GetValue(ex);
+            Assert.That(exceptionMessageResult.Equals("Id cannot be negative!"));
+        }
+
+        [Test]
+        public void TryingToFindANonExistingUserByIdShouldThrowException()
+        {
+            Database<Person> db = new Database<Person>();
+            for (int i = 0; i < 16; i++)
+            {
+                db.Add(new Person(i, "a" + i));
+            }
+
+            Exception ex = Assert.Throws<InvalidOperationException>(() => db.FindElementById(17));
+            Assert.That(ex.Message == "No Db element with such id exists!");
         }
     }
 }
