@@ -25,13 +25,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomLinkedList", "CustomL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomLinkedListTest", "CustomLinkedListTest\CustomLinkedListTest.csproj", "{2CA70E45-38F7-4937-AEE6-0BBF2FCF7055}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateTimeNowAddDays", "DateTimeNowAddDays\DateTimeNowAddDays.csproj", "{4B259B80-DC75-4AE9-B129-59114BBE2957}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateTimeNowAddDays", "DateTimeNowAddDays\DateTimeNowAddDays.csproj", "{4B259B80-DC75-4AE9-B129-59114BBE2957}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateTimeNowTests", "DateTimeNowTests\DateTimeNowTests.csproj", "{520DA8FB-107E-429E-916D-2ACCC8809C33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateTimeNowTests", "DateTimeNowTests\DateTimeNowTests.csproj", "{520DA8FB-107E-429E-916D-2ACCC8809C33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyrePressureMonitoringSystem", "TyrePressureMonitoringSystem\TyrePressureMonitoringSystem.csproj", "{5640A20F-EFFE-41D2-B7F6-CFB69748B73C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TyrePressureMonitoringSystem", "TyrePressureMonitoringSystem\TyrePressureMonitoringSystem.csproj", "{5640A20F-EFFE-41D2-B7F6-CFB69748B73C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyrePressureMonitoringSystemTests", "TyrePressureMonitoringSystemTests\TyrePressureMonitoringSystemTests.csproj", "{2807CE5E-D658-41D3-A26F-69B3A2FA399D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TyrePressureMonitoringSystemTests", "TyrePressureMonitoringSystemTests\TyrePressureMonitoringSystemTests.csproj", "{2807CE5E-D658-41D3-A26F-69B3A2FA399D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BubbleSort", "BubbleSort\BubbleSort.csproj", "{53479524-6197-4E90-8A4E-C4652D748F5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BubbleSortTests", "BubbleSortTests\BubbleSortTests.csproj", "{B4920FAE-4D98-46A6-BAE0-036416963836}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +103,14 @@ Global
 		{2807CE5E-D658-41D3-A26F-69B3A2FA399D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2807CE5E-D658-41D3-A26F-69B3A2FA399D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2807CE5E-D658-41D3-A26F-69B3A2FA399D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53479524-6197-4E90-8A4E-C4652D748F5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53479524-6197-4E90-8A4E-C4652D748F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53479524-6197-4E90-8A4E-C4652D748F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53479524-6197-4E90-8A4E-C4652D748F5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4920FAE-4D98-46A6-BAE0-036416963836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4920FAE-4D98-46A6-BAE0-036416963836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4920FAE-4D98-46A6-BAE0-036416963836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4920FAE-4D98-46A6-BAE0-036416963836}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
