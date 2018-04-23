@@ -8,6 +8,7 @@ namespace FestivalManager.Tests
     using FestivalManager.Entities;
     using FestivalManager.Entities.Sets;
     using FestivalManager.Entities.Instruments;
+    using System.Linq;
 
     [TestFixture]
     public class SetControllerTests
@@ -154,6 +155,53 @@ namespace FestivalManager.Tests
                 SetController setController = new SetController(stage);
                 string result = setController.PerformSets();
                 Assert.That(!result.Contains("-- Set Successful"));
+            }
+            catch
+            {
+                Assert.Fail();
+            }
+        }
+
+        [Test]
+        public void Test8()
+        {
+            try
+            {
+                IStage stage = new Stage();
+                ISet set = new Medium("MediumSet");
+                set.AddSong(new Song("newSong", new System.TimeSpan(0, 5, 0)));
+
+                Performer peso = new Performer("Pesho", 50);
+                Instrument guitar = new Guitar();
+                peso.AddInstrument(guitar);
+                set.AddPerformer(peso);
+                stage.AddSet(set);
+                SetController setController = new SetController(stage);
+                string result = setController.PerformSets();
+                Assert.That(guitar.Wear == 40);
+            }
+            catch
+            {
+                Assert.Fail();
+            }
+        }
+
+        [Test]
+        public void Test9()
+        {
+            try
+            {
+                IStage stage = new Stage();
+                ISet set = new Medium("MediumSet");
+                set.AddSong(new Song("newSong", new System.TimeSpan(0, 5, 0)));
+
+                Performer peso = new Performer("Pesho", 50);
+                peso.AddInstrument(new Drums());
+                set.AddPerformer(peso);
+                stage.AddSet(set);
+                SetController setController = new SetController(stage);
+                string result = setController.PerformSets();
+                Assert.That(result.Contains("1. MediumSet"));
             }
             catch
             {

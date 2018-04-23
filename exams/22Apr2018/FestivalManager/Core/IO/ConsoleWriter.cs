@@ -11,12 +11,12 @@ public class ConsoleWriter : IWriter
         stringBuilder = new StringBuilder();
     }
 
-    public void AppendLine(string line)
+    private void AppendLine(string line)
     {
         stringBuilder.AppendLine(line);
     }
 
-    public void WriteLineAll()
+    private void WriteLineAll()
     {
         Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine(stringBuilder.ToString().Trim());
